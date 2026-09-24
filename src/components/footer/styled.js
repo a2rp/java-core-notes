@@ -1,4 +1,3 @@
-// components/footer/styled.js
 import styled from "styled-components";
 
 export const Styled = {
@@ -6,35 +5,22 @@ export const Styled = {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
-        padding: 15px;
+        gap: 18px;
+        padding: 18px 15px;
         border-top: 1px solid var(--color-border);
-
-        font-size: 12px;
         color: var(--color-text-muted);
+        font-size: 12px;
 
-        .right a {
-            color: var(--color-text-secondary);
-            font-weight: 600;
-        }
+        .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--color-text-primary); font-weight: 700; }
+        .brand img { width: 30px; height: 30px; object-fit: contain; }
+        .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
+        .links a { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid var(--color-border); border-radius: 9px; color: var(--color-text-secondary); transition: border-color 180ms ease, box-shadow 180ms ease, text-shadow 180ms ease; }
+        .links a:hover, .links a:focus-visible { border-color: var(--color-border-light); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 18%, transparent); text-shadow: 0 0 10px color-mix(in srgb, var(--color-primary) 70%, transparent); }
+        .copyright a { color: var(--color-text-secondary); font-weight: 700; }
 
-        .right a:hover {
-            color: var(--color-text-primary);
-        }
-
-        a {
-            color: var(--color-text-secondary);
-            font-weight: 600;
-        }
-
-        a:hover {
-            color: var(--color-text-primary);
-        }
-
-        @media (width < 600px) {
+        @media (width < 760px) {
             flex-direction: column;
-            align-items: flex-start;
-            gap: 6px;
+            justify-content: center;
         }
     `,
 };

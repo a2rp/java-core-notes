@@ -1,26 +1,45 @@
-// components/footer/index.jsx
-import React from "react";
+import {
+    FaCodepen,
+    FaFacebookF,
+    FaGithub,
+    FaLinkedinIn,
+    FaPatreon,
+    FaYoutube,
+} from "react-icons/fa6";
+import { FiCoffee, FiHeart, FiMail, FiUser } from "react-icons/fi";
 import { Styled } from "./styled";
 
-const Footer = () => {
-    return (
-        <Styled.Wrapper>
-            <div className="left">
-                © {new Date().getFullYear()} | All rights reserved
-            </div>
+const links = [
+    ["Portfolio", "https://www.ashishranjan.net/", FiUser],
+    ["GitHub", "https://github.com/a2rp", FaGithub],
+    ["CodePen", "https://codepen.io/ash1198", FaCodepen],
+    ["LinkedIn", "https://www.linkedin.com/in/aashishranjan", FaLinkedinIn],
+    ["Facebook", "https://www.facebook.com/theash.ashish/", FaFacebookF],
+    ["YouTube", "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1", FaYoutube],
+    ["Email", "mailto:ash.ranjan09@gmail.com", FiMail],
+    ["Support", "https://a2rp-donation-page.netlify.app/", FiHeart],
+    ["Buy Me a Coffee", "https://buymeacoffee.com/a2rp", FiCoffee],
+    ["Patreon", "https://www.patreon.com/a2rp", FaPatreon],
+];
 
-            <div className="right">
-                By&nbsp;
-                <a
-                    href="https://www.ashishranjan.net"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Ashish Ranjan
+const Footer = () => (
+    <Styled.Wrapper>
+        <div className="brand">
+            <img src="/logo.png" alt="Ashish Ranjan logo" />
+            <span>Java Core Notes</span>
+        </div>
+        <nav className="links" aria-label="Social and support links">
+            {links.map(([label, href, Icon]) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
+                    <Icon aria-hidden="true" />
                 </a>
-            </div>
-        </Styled.Wrapper>
-    );
-};
+            ))}
+        </nav>
+        <div className="copyright">
+            Copyright &copy; {new Date().getFullYear()} {" "}
+            <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer">Ashish Ranjan</a>
+        </div>
+    </Styled.Wrapper>
+);
 
 export default Footer;
