@@ -1,5 +1,8 @@
 # Java Core Notes
 
+![Java Core Notes screenshot](./screenshot.jpg)
+
+
 Java Core Notes is a focused single-page revision guide for Java fundamentals, JVM concepts, object-oriented programming, collections, modern Java features, file handling, and concurrency.
 
 ## Features
