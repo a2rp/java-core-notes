@@ -45,13 +45,13 @@ const Foundations = () => {
                     "These three terms explain how Java code is developed and executed.",
                 points: [
                     "JVM (Java Virtual Machine) runs bytecode.",
-                    "JRE (Java Runtime Environment) = JVM + core libraries to run apps.",
-                    "JDK (Java Development Kit) = JRE + tools like javac to build apps.",
+                    "A Java runtime environment provides a JVM and the libraries needed to run Java applications.",
+                    "A JDK provides the runtime plus development tools such as javac.",
                 ],
                 code: `JVM  -> runs .class bytecode
-JRE  -> JVM + libraries (to run)
-JDK  -> JRE + dev tools (to build)`,
-                note: "If you are writing Java code, you need JDK. If you only run Java apps, JRE is enough.",
+Runtime -> JVM + libraries (to run)
+JDK     -> runtime + development tools (to build)`,
+                note: "The JRE is still a useful runtime concept, but JDK 11 and later do not include a separate JRE image. Runtime packaging varies by vendor.",
             },
             {
                 id: "compile-execution",

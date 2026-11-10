@@ -15,7 +15,10 @@ const ScrollToTop = () => {
     }, []);
 
     return (
-        <Styled.Button className={visible ? "isVisible" : ""} type="button" aria-label="Scroll to top" onClick={() => document.getElementById("notes-main")?.scrollTo({ top: 0, behavior: "smooth" })}>
+        <Styled.Button className={visible ? "isVisible" : ""} type="button" aria-label="Scroll to top" onClick={() => {
+            const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+            document.getElementById("notes-main")?.scrollTo({ top: 0, behavior });
+        }}>
             <FiArrowUp aria-hidden="true" />
         </Styled.Button>
     );
